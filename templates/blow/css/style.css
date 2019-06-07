@@ -1,0 +1,292 @@
+/* base */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 1em sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-basis: 100vw;
+    flex-flow: row wrap;
+    width: 100vw;
+}
+
+
+.blow {
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    min-height: 300px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    padding: 0;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul li a {
+    color: #000;
+}
+
+.button {
+    color: #fff;
+}
+
+
+
+/* blow */
+
+.blow {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    padding-left: 5%;
+    transition: padding-left .3s ease;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 4%;
+}
+
+/* logo */
+header .logo {
+    align-self: center;
+    text-align: center;
+    margin: 15px;
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 30px;
+    transition: transform .3s ease;
+}
+
+header .logo:hover {
+    transform: translate(3px, 2px);
+}
+
+header nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 15px;
+    text-align: center;
+    margin:0;
+}
+
+header nav ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+header nav ul li a {
+    text-align: center;
+    color: #000;
+    padding: 8px 17px;
+    border-radius: 50px;
+    transition: background-color .3s ease-in-out, color .5s ease;
+    font-size: 14px;
+    text-shadow: 0 0 .5px white;
+}
+
+/* active link */
+header nav ul li.active a {
+    color: #fff;
+    text-shadow: unset;
+}
+
+ul .active a {
+    background-color: #000;
+}
+
+ul a:hover {
+    background-color: #000;
+    color: #fff;
+    text-shadow: unset;
+}
+
+/* aside */
+aside {
+    position: fixed;
+    width: 5%;
+    height: 100%;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+}
+
+aside .section {
+    position: relative;
+    display: flex;
+    flex-flow: column-reverse wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    transform: rotate(180deg);
+}
+
+.section a {
+    display: block;
+    font-size: 13px;
+    writing-mode: vertical-lr;
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+    text-transform: uppercase;
+}
+
+.section a:hover {
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, .2);
+}
+
+.section a:first-child {
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+    color: #aaa;
+}
+
+.section strong {
+    color: #000;
+}
+
+.section a:nth-child(2) {
+    display: inline;
+    position: absolute;
+    color: #aaa;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    transform: rotate(180deg);
+    bottom: 90vh;
+}
+
+.section a:nth-child(2):hover svg {
+    animation: ring 4s .7s ease-in-out infinite;
+}
+
+@keyframes ring {
+    0% { transform: rotate(0); }
+    1% { transform: rotate(30deg); }
+    3% { transform: rotate(-28deg); }
+    5% { transform: rotate(34deg); }
+    7% { transform: rotate(-32deg); }
+    9% { transform: rotate(30deg); }
+    11% { transform: rotate(-28deg); }
+    13% { transform: rotate(26deg); }
+    15% { transform: rotate(-24deg); }
+    17% { transform: rotate(22deg); }
+    19% { transform: rotate(-20deg); }
+    21% { transform: rotate(18deg); }
+    23% { transform: rotate(-16deg); }
+    25% { transform: rotate(14deg); }
+    27% { transform: rotate(-12deg); }
+    29% { transform: rotate(10deg); }
+    31% { transform: rotate(-8deg); }
+    33% { transform: rotate(6deg); }
+    35% { transform: rotate(-4deg); }
+    37% { transform: rotate(2deg); }
+    39% { transform: rotate(-1deg); }
+    41% { transform: rotate(1deg); }
+  
+    43% { transform: rotate(0); }
+    100% { transform: rotate(0); }
+}
+
+
+/* button */
+
+.blow .button {
+    position: relative;
+    text-align: center;
+    align-self: center;
+    color: #f1cda9;
+    font-size: 14px;
+    padding: 10px 40px;
+    background-color: #000;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin-bottom: 10vh;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: all .3s ease 0s;
+}
+
+.blow .button:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    transform: translateY(-7px);
+}
+
+
+
+/* media */
+
+@media (max-width: 850px) {
+  body {
+      flex-flow: column-reverse wrap;
+  }
+  .blow {
+      padding-left: 0;
+      background-position: center center;
+  }
+
+  .blow nav, .blow .logo {
+      margin: 0 auto;
+  }
+
+  header {
+      flex-flow: column wrap;
+  }
+
+  header nav ul {
+      padding: 5px;
+  }
+  header nav ul li {
+      padding: 3px;
+  }
+  header nav ul li a {
+      font-size: 13px;
+      padding: 4px 9px;
+  }
+  aside {
+      position: relative;
+      width: auto;
+      height: auto;
+  }
+  aside .section {
+      position: relative;
+      flex-flow: row wrap;
+      transform: unset;
+  }
+  .section a {
+      writing-mode: unset;
+      font-size: 9px;
+  }
+  .section a:nth-child(2) {
+      position: relative;
+      bottom: unset;
+      transform: unset;
+      height: 15px;
+      width: 15px;
+      right: 8%;
+      margin: 0;
+    }
+  .section a:first-child {
+    margin: 0 auto;
+    color: #aaa;
+  }
+
+}
